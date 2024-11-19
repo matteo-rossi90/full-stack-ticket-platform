@@ -8,7 +8,7 @@
     <div class="row justify-content-center">
         <div class="col">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard utente') }}</div>
+                <div class="card-header">{{ __('Qui gestisci i tuoi ticket') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
