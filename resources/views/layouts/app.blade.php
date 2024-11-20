@@ -34,7 +34,7 @@
                         {{-- </li> --}}
                     {{-- </ul> --}}
 
-                    <a class="navbar-brand d-flex align-items-center me-auto" href="{{ url('/') }}">
+                    <a class="navbar-brand d-flex align-items-center me-auto" href="{{ route('login') }}">
                         <div class="logo">
                             <h4>TechNgo</h4>
                             {{-- <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 150px">
@@ -87,9 +87,17 @@
             </div>
         </nav>
 
-        <main class="">
-            @yield('content')
+        <main class="d-flex justify-content-center wrapper">
+
+            @auth
+                @include('admin.partials.aside')
+            @endauth
+
+            <div class="content">
+                @yield('content')
+            </div>
         </main>
+
     </div>
 </body>
 
