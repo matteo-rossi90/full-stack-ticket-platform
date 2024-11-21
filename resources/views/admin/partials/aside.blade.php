@@ -1,6 +1,6 @@
 <aside class="aside-body">
-    <div class="m-4">
-        <ul class="text-secondary">
+    <div class="m-4 d-flex flex-column align-self-center">
+        <ul>
             <li>
                 <a href="{{route('admin.home')}}" class="d-flex gap-3 ms-3">
                     <i class="bi bi-speedometer2"></i>
