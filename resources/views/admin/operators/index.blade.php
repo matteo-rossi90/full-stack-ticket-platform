@@ -13,19 +13,20 @@
         <thead>
             <tr>
             <th scope="col">#id</th>
-            <th scope="col">Titolo</th>
             <th scope="col">Nome</th>
-            <th scope="col">Data</th>
-            <th scope="col">Azioni</th>
+            <th scope="col">Cognome</th>
+            <th scope="col">Email</th>
+            <th scope="col">Disponibile</th>
             </tr>
         </thead>
         <tbody>
-            @foreach($tickets as $item)
+            @foreach($operators as $operator)
             <tr>
-                <td>{{ $item->id}}</td>
-                <td>{{ $item->title}}</td>
-                <td>{{ $item->author}}</td>
-                <td>{{ $item->date}}</td>
+                <td>{{ $operator->id}}</td>
+                <td>{{ $operator->name}}</td>
+                <td>{{ $operator->surname}}</td>
+                <td>{{ $operator->email}}</td>
+                <td>{{ $operator->is_available}}</td>
             </tr>
             @endforeach
         </tbody>

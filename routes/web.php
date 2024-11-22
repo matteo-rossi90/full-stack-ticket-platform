@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\OperatorController;
 use App\Http\Controllers\Admin\TicketController;
 use App\Http\Controllers\Guest\PageController;
 use App\Http\Controllers\ProfileController;
@@ -35,6 +36,8 @@ Route::middleware(['auth', 'verified'])
     ->group(function(){
         Route::get('/', [DashboardController::class, 'index'])->name('home');
         Route::resource('tickets', TicketController::class);
+        Route::resource('operators', OperatorController::class);
+
     });
 
 require __DIR__.'/auth.php';
