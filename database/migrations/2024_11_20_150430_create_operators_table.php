@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('email', 100)->nullable();
             $table->id();
             $table->boolean('is_available');
+            $table->timestamps();
         });
     }
 

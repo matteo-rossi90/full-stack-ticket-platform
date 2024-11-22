@@ -4,7 +4,7 @@
 
 <div class="title">
     <h2 class="container fs-4 text-secondary my-4">
-        {{ __('Lista dei tickets') }}
+        {{ __('Operatori') }}
     </h2>
 </div>
 
@@ -26,17 +26,6 @@
                 <td>{{ $item->title}}</td>
                 <td>{{ $item->author}}</td>
                 <td>{{ $item->date}}</td>
-                <td class="d-flex gap-3">
-                    <a href="" class="btn">
-                        <i class="bi bi-eye text-secondary"></i>
-                    </a>
-                    <a href="" class="btn">
-                        <i class="bi bi-pencil-square text-secondary"></i>
-                    </a>
-                    <button class="btn">
-                        <i class="bi bi-trash3 text-danger"></i>
-                    </button>
-                </td>
             </tr>
             @endforeach
         </tbody>
