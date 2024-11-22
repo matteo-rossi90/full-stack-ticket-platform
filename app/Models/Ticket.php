@@ -16,4 +16,14 @@ class Ticket extends Model
     public function operator(){
         return $this->belongsTo(Operator::class);
     }
+
+    public function status()
+    {
+        return $this->belongsTo(Status::class);
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

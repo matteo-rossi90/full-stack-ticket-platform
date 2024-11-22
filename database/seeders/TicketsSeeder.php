@@ -3,7 +3,9 @@
 namespace Database\Seeders;
 
 use App\Functions\Helper;
+use App\Models\Category;
 use App\Models\Operator;
+use App\Models\Status;
 use App\Models\Ticket;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -56,6 +58,8 @@ class TicketsSeeder extends Seeder
             $new_ticket->message = $faker->sentence(8);
             $new_ticket->date = $faker->dateTimeBetween('-2 months', 'now');
             $new_ticket->operator_id = Operator::inRandomOrder()->first()->id;
+            $new_ticket->status_id = Status::inRandomOrder()->first()->id;
+            $new_ticket->category_id = Category::inRandomOrder()->first()->id;
             $new_ticket->slug = Helper::generateSlug($new_ticket->title, Ticket::class);
             $new_ticket->save();
         }
