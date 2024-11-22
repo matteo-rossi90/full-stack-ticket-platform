@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Ticket extends Model
 {
     use HasFactory;
+
+    protected $casts = [
+        'date' => 'datetime:d-m-Y'
+    ];
+
+    public function operator(){
+        return $this->belongsTo(Operator::class);
+    }
 }
