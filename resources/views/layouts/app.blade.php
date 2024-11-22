@@ -36,7 +36,7 @@
 
                     <a class="navbar-brand d-flex align-items-center me-auto" href="{{ route('login') }}">
                         <div class="d-flex align-items-center logo">
-                            <img src="tech.png" alt="logo">
+                            <img src="{{Vite::asset('public/tech.png')}}" alt="logo">
                             <h4 class="m-0">TechNgo</h4>
                             {{-- <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 150px">
                                 <g clip-path="url(#clip0)" fill="#EF3B2D">
@@ -67,7 +67,7 @@
                         <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     <div class="logo-auth me-3">
-                                        <img src="user.jpg" alt="user">
+                                        <img src= "{{Vite::asset('public/user.jpg')}}" alt="user">
                                     </div>
                                     {{ Auth::user()->name }}
                                 </a>
