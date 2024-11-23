@@ -78,8 +78,10 @@ ul li{
     overflow:auto;
     width: calc(100% - 150px);
     height: 100%;
+    background-color: rgb(232, 238, 244);
 
     .title{
+        background-color: white;
         border-bottom: 1px solid rgb(224, 224, 224);
         // height: 60px;
         margin-bottom: 1rem;
@@ -106,4 +108,8 @@ ul li{
     object-fit: cover;
     width: 100px;
 
+}
+
+.card{
+    border:none !important;
 }
