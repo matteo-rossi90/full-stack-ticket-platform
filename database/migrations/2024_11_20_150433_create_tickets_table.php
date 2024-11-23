@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string('slug', 100);
             $table->string('title', 100);
-            $table->string('author', 100);
             $table->date('date');
             $table->text('message');
             $table->unsignedBigInteger('operator_id')->nullable();

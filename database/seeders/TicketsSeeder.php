@@ -54,7 +54,6 @@ class TicketsSeeder extends Seeder
                     "Ottimizzazione della sicurezza di rete aziendale"
                 ]
             );
-            $new_ticket->author = $faker->name();
             $new_ticket->message = $faker->sentence(8);
             $new_ticket->date = $faker->dateTimeBetween('-2 months', 'now');
             $new_ticket->operator_id = Operator::inRandomOrder()->first()->id;

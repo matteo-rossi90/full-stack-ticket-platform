@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Functions\Helper;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\TicketRequest;
 use App\Models\Category;
 use App\Models\Operator;
 use App\Models\Status;
@@ -16,7 +18,7 @@ class TicketController extends Controller
      */
     public function index()
     {
-        $tickets = Ticket::all();
+        $tickets = Ticket::orderBy('id', 'desc')->get();
 
         return view('admin.tickets.index', compact('tickets'));
     }
@@ -38,9 +40,20 @@ class TicketController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(TicketRequest $request)
     {
-        //
+        $data = $request->all();
+
+        $data['slug'] = Helper::generateSlug($data['title'], Ticket::class);
+
+        $ticket = Ticket::create($data);
+
+        session()->flash('success', 'Il ticket è stato creato con successo!');
+
+        //dd($request->all());
+
+        return redirect()->route('admin.tickets.index', $ticket);
+
     }
 
     /**

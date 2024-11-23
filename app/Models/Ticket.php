@@ -9,6 +9,17 @@ class Ticket extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'title',
+        'slug',
+        'message',
+        'date',
+        'operator_id',
+        'status_id',
+        'category_id',
+
+    ];
+
     // protected $casts = [
         // 'date' => 'datetime:d-m-Y'
     // ];
