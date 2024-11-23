@@ -2,8 +2,8 @@
 
 @section('content')
 
-<div class="title">
-    <h2 class="container fs-4 text-secondary my-4">
+<div class="container-fluid title">
+    <h2 class="mx-4 fs-4 text-secondary my-4">
         {{ __('Operatori') }}
     </h2>
 </div>

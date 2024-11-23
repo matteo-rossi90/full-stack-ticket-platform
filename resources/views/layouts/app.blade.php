@@ -96,12 +96,11 @@
 
             @auth
                 @include('admin.partials.aside')
-                <div class="content-auth">
-                    @yield('content')
-                </div>
             @endauth
-                <div class="content">
-                    @yield('content')
+                    <div class="content bck-content">
+                        @yield('content')
+                    </div>
+
                 </div>
             </div>
         </main>

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
+use App\Models\Operator;
+use App\Models\Status;
 use App\Models\Ticket;
 use Illuminate\Http\Request;
 
@@ -23,7 +26,13 @@ class TicketController extends Controller
      */
     public function create()
     {
-        //
+        $operators = Operator::all();
+
+        $categories = Category::all();
+
+        $statuses = Status::all();
+
+        return view('admin.tickets.create', compact('operators', 'categories', 'statuses'));
     }
 
     /**
