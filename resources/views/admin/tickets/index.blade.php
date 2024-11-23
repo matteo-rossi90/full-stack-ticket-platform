@@ -34,15 +34,41 @@
                             <td class="dimension">{{ $item->status->type}}</td>
                             <td>{{ $item->operator->name}} {{ $item->operator->surname}}</td>
                             <td class="d-flex gap-3">
-                                <a href="" class="btn">
+                                <a href="" class="btn btn-show">
                                     <i class="bi bi-eye text-secondary"></i>
                                 </a>
-                                <a href="" class="btn">
+                                <a href="" class="btn btn-edit">
                                     <i class="bi bi-pencil-square text-secondary"></i>
                                 </a>
-                                <button class="btn">
-                                    <i class="bi bi-trash3 text-danger"></i>
-                                </button>
+
+                                <form class="d-inline" action="{{route('admin.tickets.destroy', $item)}}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-trash" type="button" data-bs-toggle="modal" data-bs-target="#modal-{{$item->id}}">
+                                        <i class="bi bi-trash3 text-danger"></i>
+                                    </button>
+
+                                    <div class="modal fade" id="modal-{{$item->id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalLabel-{{$item->id}}" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="modalLabel-{{$item->id}}">Stai per eliminare il ticket</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Vuoi proprio eliminare il ticket {{$item->title}} ?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+                                                <button type="submit" class="btn btn-danger" onclick="document.getElementById('delete-form-{{$item->id}}').submit()">Procedi</button>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                </form>
+
+
+
                             </td>
                         </tr>
                         @endforeach

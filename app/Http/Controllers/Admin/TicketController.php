@@ -83,8 +83,11 @@ class TicketController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Ticket $ticket)
     {
-        //
+
+        $ticket->delete();
+
+        return redirect()->route('admin.tickets.index')->with('success', 'Il ticket è stato cancellato con successo.');
     }
 }
