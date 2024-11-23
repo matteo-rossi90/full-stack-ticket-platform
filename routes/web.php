@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoriesController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\OperatorController;
 use App\Http\Controllers\Admin\TicketController;
@@ -37,6 +38,7 @@ Route::middleware(['auth', 'verified'])
         Route::get('/', [DashboardController::class, 'index'])->name('home');
         Route::resource('tickets', TicketController::class);
         Route::resource('operators', OperatorController::class);
+        Route::resource('categories', CategoriesController::class);
 
     });
 

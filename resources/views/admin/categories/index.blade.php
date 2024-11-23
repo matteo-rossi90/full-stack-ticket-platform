@@ -4,7 +4,7 @@
 
 <div class="title">
     <h2 class="container fs-4 text-secondary my-4">
-        {{ __('Operatori') }}
+        {{ __('Categorie') }}
     </h2>
 </div>
 
@@ -16,20 +16,14 @@
                     <thead>
                         <tr>
                             <th scope="col">#id</th>
-                            <th scope="col">Nome</th>
-                            <th scope="col">Cognome</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Disponibile</th>
+                            <th scope="col">Categoria</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($operators as $operator)
+                        @foreach($categories as $category)
                         <tr>
-                            <td>{{ $operator->id}}</td>
-                            <td>{{ $operator->name}}</td>
-                            <td>{{ $operator->surname}}</td>
-                            <td>{{ $operator->email}}</td>
-                            <td>{{ $operator->is_available}}</td>
+                            <td>{{ $category->id}}</td>
+                            <td>{{ $category->name}}</td>
                         </tr>
                         @endforeach
                     </tbody>
@@ -39,5 +33,6 @@
         </div>
     </div>
 </div>
+
 
 @endsection

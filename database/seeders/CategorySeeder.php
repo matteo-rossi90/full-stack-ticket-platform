@@ -14,18 +14,20 @@ class CategorySeeder extends Seeder
      */
     public function run(Faker $faker): void
     {
-        for($i = 0; $i < 10; $i++){
+
+        $categories = [
+            "Account e Autenticazione",
+            "Sicurezza",
+            "Software",
+            "Sistema Operativo",
+            "Rete e Connessioni",
+            "Cloud e Archiviazione",
+            "Hardware",
+        ];
+
+        foreach($categories as $category){
             $new_category = new Category();
-            $new_category->name = $faker->randomElement([
-                "Account e Autenticazione",
-                "Sicurezza",
-                "Software",
-                "Sistema Operativo",
-                "Rete e Connessioni",
-                "Cloud e Archiviazione",
-                "Hardware",
-            ]);
-            $
+            $new_category->name = $category;
             $new_category->save();
         }
     }

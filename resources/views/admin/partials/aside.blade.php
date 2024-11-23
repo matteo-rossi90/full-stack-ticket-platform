@@ -26,7 +26,7 @@
                 </a>
             </li>
             <li>
-                <a href="" class="d-flex gap-3 mx-4">
+                <a href="{{route('admin.categories.index')}}" class="d-flex gap-3 mx-4">
                     <i class="bi bi-bookmarks"></i>
                     Categorie
                 </a>
