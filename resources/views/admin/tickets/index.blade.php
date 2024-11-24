@@ -31,7 +31,12 @@
                             <td>{{ $ticket->title}}</td>
                             <td>{{ $ticket->date}}</td>
                             <td class="dimension">{{ $ticket->category->name}}</td>
-                            <td class="dimension">{{ $ticket->status->type}}</td>
+                            <td class="dimension">
+                                <div class="{{ $ticket->status->type === 'ASSEGNATO' ? 'assigned' : ($ticket->status->type === 'IN LAVORAZIONE' ? 'in_progress' : 'closed') }}">
+                                    {{ $ticket->status->type}}
+                                </div>
+
+                            </td>
                             <td>{{ $ticket->operator->name}} {{ $ticket->operator->surname}}</td>
                             <td class="d-flex gap-3">
                                 <a href="{{route('admin.tickets.show', $ticket)}}" class="btn btn-show">

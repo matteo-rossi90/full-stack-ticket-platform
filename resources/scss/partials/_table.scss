@@ -22,3 +22,44 @@ td{
     }
 }
 
+.assigned,
+.in_progress,
+.closed{
+    border-radius: 50px;
+    padding: 0.35rem;
+    text-align: center;
+}
+
+.assigned{
+    background-color: rgb(186, 235, 186);
+}
+
+.in_progress {
+    background-color: rgb(242, 216, 155);
+}
+
+.closed {
+    background-color: rgb(237, 237, 237);
+}
+
+.text-badge{
+    font-size: 12px;
+    width: 10%;
+}
+
+.available,
+.not_available{
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    padding: 0.35rem;
+}
+
+.available {
+    background-color: rgb(72, 186, 72);
+}
+
+.not_available {
+    background-color: rgb(236, 69, 69);
+}
+

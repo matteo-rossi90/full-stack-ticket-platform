@@ -19,7 +19,7 @@
                             <th scope="col">Nome</th>
                             <th scope="col">Cognome</th>
                             <th scope="col">Email</th>
-                            <th scope="col">Disponibile</th>
+                            <th scope="col">Disponibilità</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -29,7 +29,10 @@
                             <td>{{ $operator->name}}</td>
                             <td>{{ $operator->surname}}</td>
                             <td>{{ $operator->email}}</td>
-                            <td>{{ $operator->is_available ? 'Sì' : 'No'}}</td>
+                            <td>
+                                <div class="{{$operator->is_available === 1 ? 'available' : 'not_available'}}">
+                                </div>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>

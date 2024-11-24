@@ -14,7 +14,7 @@
             <div class="card p-4 w-100">
                 <ul class="p-0">
                     <li class="mb-4 d-flex justify-content-between align-items-center">
-                        <div class="">
+                        <div class="{{$ticket->status->type === 'ASSEGNATO' ? 'assigned' : ($ticket->status->type === 'IN LAVORAZIONE' ? 'in_progress' : 'closed')}} text-badge">
                             {{$ticket->status->type}}
                         </div>
                         <div class="">
