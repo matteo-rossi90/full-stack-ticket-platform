@@ -69,15 +69,33 @@ class TicketController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $ticket = Ticket::find($id);
+
+        $categories = Category::all();
+
+        $operators = Operator::all();
+
+        $statuses = Status::all();
+
+        return view('admin.tickets.edit', compact('ticket', 'categories', 'operators', 'statuses'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(TicketRequest $request, string $id)
     {
-        //
+        $ticket = Ticket::find($id);
+
+        $data = $request->all();
+
+        if ($data['title'] != $ticket->title) {
+            $data['slug'] = Helper::generateSlug($data['title'], Ticket::class);
+        }
+
+        $ticket->update($data);
+
+        return redirect()->route('admin.tickets.index', compact('ticket'));
     }
 
     /**

@@ -37,7 +37,7 @@
                                 <a href="" class="btn btn-show">
                                     <i class="bi bi-eye text-secondary"></i>
                                 </a>
-                                <a href="" class="btn btn-edit">
+                                <a href="{{route('admin.tickets.edit', $item)}}" class="btn btn-edit">
                                     <i class="bi bi-pencil-square text-secondary"></i>
                                 </a>
 

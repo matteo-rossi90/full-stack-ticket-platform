@@ -29,7 +29,7 @@
                             <td>{{ $operator->name}}</td>
                             <td>{{ $operator->surname}}</td>
                             <td>{{ $operator->email}}</td>
-                            <td>{{ $operator->is_available}}</td>
+                            <td>{{ $operator->is_available ? 'Sì' : 'No'}}</td>
                         </tr>
                         @endforeach
                     </tbody>
