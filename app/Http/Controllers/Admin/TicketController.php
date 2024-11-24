@@ -36,7 +36,7 @@ class TicketController extends Controller
             $tickets->where('status_id', $statusId);
         }
 
-        $tickets = $tickets->orderBy('id', 'desc')->get();
+        $tickets = $tickets->orderBy('id', 'desc')->paginate(10);
 
         return view('admin.tickets.index', compact('tickets','categories', 'statuses'));
     }

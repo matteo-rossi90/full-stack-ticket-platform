@@ -122,6 +122,10 @@
                     </tbody>
                 </table>
 
+                <div class="d-flex justify-content-center">
+                    {{$tickets->links()}}
+                </div>
+
             </div>
 
         </div>
