@@ -13,7 +13,7 @@ class StatusSeeder extends Seeder
      */
     public function run(): void
     {
-        $statuses = ['Assegnato', 'In lavorazione', 'Chiuso'];
+        $statuses = ['ASSEGNATO', 'IN LAVORAZIONE', 'CHIUSO'];
 
         foreach($statuses as $status){
             $new_status = new Status();

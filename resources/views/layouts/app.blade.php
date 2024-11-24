@@ -76,14 +76,14 @@
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item p-2" href="{{ url('admin') }}">{{__('Dashboard')}}</a>
                                 <a class="dropdown-item p-2" href="{{ url('profile') }}">{{__('Profilo')}}</a>
-                                <a class="dropdown-item p-2" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    {{ __('Esci') }}
-                                </a>
+                                {{-- <a class="dropdown-item p-2" href="{{ route('logout') }}" onclick="event.preventDefault(); --}}
+                                                    {{-- document.getElementById('logout-form').submit();"> --}}
+                                    {{-- {{ __('Esci') }} --}}
+                                {{-- </a> --}}
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
+                                {{-- <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none"> --}}
+                                    {{-- @csrf --}}
+                                {{-- </form> --}}
                             </div>
                         </li>
                         @endguest
