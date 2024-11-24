@@ -3,9 +3,51 @@
 @section('content')
 
 <div class="container-fluid title">
-    <h2 class="mx-4 fs-4 text-secondary my-4">
-        {{ __('Lista dei tickets') }}
-    </h2>
+    <div class="d-flex justify-content-between align-items-center">
+        <h2 class="mx-4 fs-4 text-secondary my-4">
+            {{ __('Lista dei tickets') }}
+        </h2>
+
+        <form action="{{ route('admin.tickets.index') }}" method="GET">
+            @csrf
+            <div class="row">
+
+                <div class="col">
+                    <select name="category_id" id="category_id" class="form-select">
+                        <option value="">Categoria</option>
+                        @foreach($categories as $category)
+                            <option value="{{ $category->id }}"
+                                @if(request('category_id') == $category->id) selected @endif>
+                                {{ $category->name }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
+
+
+                <div class="col">
+                    <select name="status_id" id="status_id" class="form-select">
+                        <option value="">Stato</option>
+                        @foreach($statuses as $status)
+                            <option value="{{ $status->id }}"
+                                @if(request('status_id') == $status->id) selected @endif>
+                                {{ $status->type }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
+
+                <div class="col-md-4 d-flex align-items-end gap-2">
+                    <button type="submit" class="btn btn-outline-primary">
+                        <i class="bi bi-funnel"></i>
+                    </button>
+                    <a href="{{route('admin.tickets.index')}}" class="btn btn-outline-danger">Annulla</a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
 </div>
 
 <div class="container-fluid">
@@ -37,7 +79,7 @@
                                 </div>
 
                             </td>
-                            <td>{{ $ticket->operator->name}} {{ $ticket->operator->surname}}</td>
+                            <td>{{ $ticket->operator ? $ticket->operator->name : 'Nessun operatore'}} {{ $ticket->operator ? $ticket->operator->surname : 'Nessun operatore'}}</td>
                             <td class="d-flex gap-3">
                                 <a href="{{route('admin.tickets.show', $ticket)}}" class="btn btn-show">
                                     <i class="bi bi-eye text-secondary"></i>
