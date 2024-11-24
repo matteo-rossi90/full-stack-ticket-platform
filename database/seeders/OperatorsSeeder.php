@@ -19,7 +19,7 @@ class OperatorsSeeder extends Seeder
             $new_operator->name = $faker->firstName();
             $new_operator->surname = $faker->lastName();
             $new_operator->email = $faker->email();
-            $new_operator->is_available = $faker->boolean();
+            $new_operator->is_available = $faker->boolean('true', true);
             $new_operator->save();
         }
     }

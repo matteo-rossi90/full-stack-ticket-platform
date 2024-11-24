@@ -21,8 +21,5 @@ class StatusSeeder extends Seeder
             $new_status->save();
         }
 
-
-
-
     }
 }

@@ -31,8 +31,6 @@ class TicketController extends Controller
     {
         $operators = Operator::where('is_available', 1)->get();
 
-
-
         $categories = Category::all();
 
         $statuses = Status::all();
@@ -103,8 +101,6 @@ class TicketController extends Controller
         // }
 
         $isClosed = isset($data['status_id']) && $data['status_id'] == 3;
-
-        $ticket->update($data);
 
         if ($isClosed && $ticket->operator) {
             $ticket->operator->update(['is_available' => 1]);

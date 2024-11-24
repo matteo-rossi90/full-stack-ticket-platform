@@ -57,7 +57,7 @@ class TicketsSeeder extends Seeder
             $new_ticket->message = $faker->sentence(8);
             $new_ticket->date = $faker->dateTimeBetween('-2 months', 'now');
             $new_ticket->operator_id = Operator::inRandomOrder()->first()->id;
-            $new_ticket->status_id = Status::inRandomOrder()->first()->id;
+            $new_ticket->status_id = Status::where('type', 'CHIUSO')->first()->id;
             $new_ticket->category_id = Category::inRandomOrder()->first()->id;
             $new_ticket->slug = Helper::generateSlug($new_ticket->title, Ticket::class);
             $new_ticket->save();
