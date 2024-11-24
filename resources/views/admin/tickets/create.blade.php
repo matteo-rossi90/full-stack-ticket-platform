@@ -4,7 +4,7 @@
 
 <div class="container-fluid title">
     <h2 class="fs-4 mx-4 text-secondary my-4">
-        {{ __('crea un nuovo ticket') }}
+        {{ __('Crea un nuovo ticket') }}
     </h2>
 </div>
 
@@ -94,7 +94,7 @@
         <div class="toast align-items-center text-bg-danger border-0 show" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="d-flex">
                 <div class="toast-body">
-                    Attenzione! Ci sono {{$errors->count()}} errori.
+                    Attenzione! Errori individuati: {{$errors->count()}}.
                 </div>
                 <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>

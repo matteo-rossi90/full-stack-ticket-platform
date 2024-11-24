@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Functions\Helper;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\TicketEditRequest;
 use App\Http\Requests\TicketRequest;
 use App\Models\Category;
 use App\Models\Operator;
@@ -71,31 +72,27 @@ class TicketController extends Controller
     {
         $ticket = Ticket::find($id);
 
-        $categories = Category::all();
-
-        $operators = Operator::all();
-
         $statuses = Status::all();
 
-        return view('admin.tickets.edit', compact('ticket', 'categories', 'operators', 'statuses'));
+        return view('admin.tickets.edit', compact('ticket', 'statuses'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(TicketRequest $request, string $id)
+    public function update(TicketEditRequest $request, string $id)
     {
         $ticket = Ticket::find($id);
 
         $data = $request->all();
 
-        if ($data['title'] != $ticket->title) {
-            $data['slug'] = Helper::generateSlug($data['title'], Ticket::class);
-        }
+        // if ($data['title'] != $ticket->title) {
+            // $data['slug'] = Helper::generateSlug($data['title'], Ticket::class);
+        // }
 
         $ticket->update($data);
 
-        return redirect()->route('admin.tickets.index', compact('ticket'));
+        return redirect()->route('admin.tickets.index', compact('ticket'))->with('success', 'Lo stato del ticket è stato modificato');
     }
 
     /**
