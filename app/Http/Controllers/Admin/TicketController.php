@@ -29,7 +29,9 @@ class TicketController extends Controller
      */
     public function create()
     {
-        $operators = Operator::all();
+        $operators = Operator::where('is_available', 1)->get();
+
+
 
         $categories = Category::all();
 
@@ -46,6 +48,14 @@ class TicketController extends Controller
         $data = $request->all();
 
         $data['slug'] = Helper::generateSlug($data['title'], Ticket::class);
+
+        $operator = Operator::findOrFail($request->operator_id);
+
+        if (!$operator->is_available) {
+            return redirect()->back()->withErrors(['operator_id' => 'L\'operatore selezionato non è disponibile.']);
+        }
+
+        $operator->update(['is_available' => 0]);
 
         $ticket = Ticket::create($data);
 
@@ -89,8 +99,16 @@ class TicketController extends Controller
         $data = $request->all();
 
         // if ($data['title'] != $ticket->title) {
-            // $data['slug'] = Helper::generateSlug($data['title'], Ticket::class);
+        // $data['slug'] = Helper::generateSlug($data['title'], Ticket::class);
         // }
+
+        $isClosed = isset($data['status_id']) && $data['status_id'] == 3;
+
+        $ticket->update($data);
+
+        if ($isClosed && $ticket->operator) {
+            $ticket->operator->update(['is_available' => 1]);
+        }
 
         $ticket->update($data);
 

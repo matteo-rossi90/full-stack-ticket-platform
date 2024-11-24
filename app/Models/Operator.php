@@ -9,6 +9,10 @@ class Operator extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+            "is_available"
+    ];
+
     public function tickets()
     {
         return $this->hasMany(Ticket::class);

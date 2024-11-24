@@ -29,7 +29,7 @@
                             <td>{{ $operator->name}}</td>
                             <td>{{ $operator->surname}}</td>
                             <td>{{ $operator->email}}</td>
-                            <td>
+                            <td id="operator-{{$operator->is_available}}">
                                 <div class="{{$operator->is_available === 1 ? 'available' : 'not_available'}}">
                                 </div>
                             </td>
