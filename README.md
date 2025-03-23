@@ -1,6 +1,7 @@
 **TechNgo**
 
-![TechNgo](https://github.com/user-attachments/assets/b5a56599-afeb-44af-800f-21f7673551e7)
+![TechNGo (2)](https://github.com/user-attachments/assets/7cb99fa3-e242-4aa9-85d1-ac62e2bfaf6c)
+
 
 Si tratta di un'applicazione, sviluppata in Laravel, che permette a un utente di un'azienda fittizia specializzata nel settore informatico di gestire ticket di supporto. L'utente amministratore può creare un ticket, stabilire la categoria del problema riscontrato e assegnare gli operatori in quel momento disponibili. L'applicazione è formata da diverse parti:
 - sistema di autenticazione che richiede nome, email e password e un sistema di verifica della password tramite indirizzo email;
