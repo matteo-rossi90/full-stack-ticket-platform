@@ -6,4 +6,13 @@ Si tratta di un'applicazione, sviluppata in Laravel, che permette a un utente di
 - pagina che permette di creare un nuovo ticket, stabilendo l'oggetto del problema, la categoria a cui potrebbe appartenere (tra quelle disponibili), l'operatore (compaiono solo quelli disponibili al momento) e lo stato del ticket (assegnato, in lavorazione e chiuso);
 - pagina che presenta la lista di tutti gli operatori disponibili e non; quando viene assegnato un nuovo ticket, l'operatore da disponibile diventa occupato e non sarà presente nella lista del form di creazione;
 
+Per realizzare questa applicazione ho svolto i seguenti step:
+1) creazione del database e delle rispettive tabelle contenente i campi appositi, nonché delle relazioni
+2) avviamento delle migration attraverso Laravel
+3) creazione del layout di base della dashboard
+4) creazione dei model e del Controller necessari per la CRUD
+5) costruzione della validazione del form di compilazione
+6) logica di assegnazione delle categorie e degli operatori
+7) aggiunta della paginazione e di un sistema di ricerca in base a un filtro
+
 Il progetto è stato pensato come esercizio nella logica e nelle procedure che caratterizzano l'uso di Laravel e per rafforzare le conoscenze già acquisite e quadagnarne di nuove.
